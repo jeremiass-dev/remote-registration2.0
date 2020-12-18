@@ -8,12 +8,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import net.javaguides.springboot.springsecurity.Application;
 import net.javaguides.springboot.springsecurity.pageobject.HomePageObject;
 import net.javaguides.springboot.springsecurity.pageobject.LoginPageObject;
 import org.junit.runners.MethodSorters;
 
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = Application.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestAddEditDelete {
 	private WebDriver driver;
@@ -25,7 +32,9 @@ public class TestAddEditDelete {
 		System.setProperty("webdriver.gecko.driver", 
 				"E:\\TDevs\\geckodriver-v0.28.0-win64\\geckodriver.exe"); //E:\TDevs\geckodriver-v0.28.0-win64
 		driver= new FirefoxDriver(); //new ChromeDriver(); 
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		driver.get("localhost:8080");
 	}
 	
@@ -62,6 +71,7 @@ public class TestAddEditDelete {
 		loginPage.login("admin@admin.com", "admin123");
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		homePage= new HomePageObject(driver);
 		
 		homePage.deleteStudent();

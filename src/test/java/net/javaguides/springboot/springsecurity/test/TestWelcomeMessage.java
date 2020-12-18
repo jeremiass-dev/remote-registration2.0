@@ -7,10 +7,17 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import net.javaguides.springboot.springsecurity.Application;
+
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = Application.class)
 public class TestWelcomeMessage {
 	private WebDriver driver;
 	 
@@ -22,7 +29,9 @@ public class TestWelcomeMessage {
 		
 		//driver = new ChromeDriver();
 		driver= new FirefoxDriver();
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		driver.get("localhost:8080");
 	}
 	
