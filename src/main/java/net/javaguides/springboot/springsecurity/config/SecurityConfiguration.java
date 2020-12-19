@@ -24,8 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
+        http.authorizeRequests()
                     .antMatchers(
                             "/registration**",
                             "/js/**",
@@ -70,5 +69,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         firewall.setAllowUrlEncodedSlash(true);    
         return firewall;
     }
+    
+    /*
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        //@formatter:off
+        super.configure(web);
+        web.httpFirewall(allowUrlEncodedSlashHttpFirewall());
+    }*/
 
 }

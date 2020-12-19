@@ -5,11 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>net.guides.springboot</groupId>
-	<artifactId>registration-login-springboot-security-thymeleaf</artifactId>
+	<!--  <artifactId>registration-login-springboot-security-thymeleaf</artifactId>-->
+	<artifactId>registration3.0</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>registration-login-springboot-security-thymeleaf</name>
+	<!--  <name>registration-login-springboot-security-thymeleaf</name>-->
+	<name>registration3.0</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
